@@ -30,7 +30,7 @@ const Home = () => {
           <Text style={{fontSize: 32, fontWeight: '500'}}>Aspen</Text>
         </Text>
         <TextInput
-          style={[styles.textInput, {color: isdarkMode ? 'black' : '#B8B8B8'}]}
+          style={[styles.textInput, {color: isdarkMode ? 'black' : '#757575'}]}
           value={value}
           onChangeText={text => setValue(text)}
           placeholder={'Find things to do'}
