@@ -97,29 +97,21 @@ const Home = () => {
                 borderRadius={20}
                 source={{uri: item.url}}>
                 <View
-                  style={{
-                    paddingVertical: 4,
-                    paddingHorizontal: 8,
-                    alignSelf: 'flex-start',
-                    borderRadius: 12,
-                    marginLeft: 14,
-                    marginBottom: 10,
-                    backgroundColor: isdarkMode ? 'white' : '#4D5652',
-                  }}>
+                  style={[
+                    styles.popularTitleContainer,
+                    {backgroundColor: isdarkMode ? 'white' : '#4D5652'},
+                  ]}>
                   <Text style={{color: isdarkMode ? 'black' : 'white'}}>
                     {item.title}
                   </Text>
                 </View>
                 <View
-                  style={{
-                    paddingVertical: 4,
-                    paddingHorizontal: 8,
-                    alignSelf: 'flex-start',
-                    borderRadius: 12,
-                    marginLeft: 14,
-                    marginBottom: 10,
-                    backgroundColor: isdarkMode ? 'white' : '#4D5652',
-                  }}>
+                  style={[
+                    styles.ratingContainer,
+                    {
+                      backgroundColor: isdarkMode ? 'white' : '#4D5652',
+                    },
+                  ]}>
                   <Text style={{color: isdarkMode ? '#4D5652' : 'white'}}>
                     {item.rating}
                   </Text>
@@ -140,7 +132,7 @@ const Home = () => {
           </Text>
           <ScrollView
             horizontal
-            style={{marginTop: 20, paddingBottom: 5}}
+            style={{marginTop: 20}}
             contentContainerStyle={{paddingHorizontal: 10}}
             showsHorizontalScrollIndicator={false}>
             {recommendedList?.map((item, index) => (
@@ -204,6 +196,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     backgroundColor: 'white',
     borderRadius: 16,
+    marginBottom: 10,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -213,5 +206,21 @@ const styles = StyleSheet.create({
     shadowRadius: 2.62,
 
     elevation: 4,
+  },
+  popularTitleContainer: {
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+    alignSelf: 'flex-start',
+    borderRadius: 12,
+    marginLeft: 14,
+    marginBottom: 10,
+  },
+  ratingContainer: {
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+    alignSelf: 'flex-start',
+    borderRadius: 12,
+    marginLeft: 14,
+    marginBottom: 10,
   },
 });
