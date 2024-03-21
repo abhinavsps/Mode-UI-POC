@@ -10,14 +10,21 @@ import React from 'react';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {useTranslation} from 'react-i18next';
+import {isDarkMode} from '../utils/functions';
 
 const Details = () => {
+  let isdarkMode = isDarkMode();
   const route = useRoute();
   const navigation = useNavigation();
   const {t} = useTranslation();
 
   return (
-    <SafeAreaView style={{flex: 1, paddingHorizontal: 20}}>
+    <SafeAreaView
+      style={{
+        flex: 1,
+        paddingHorizontal: 20,
+        backgroundColor: isdarkMode ? 'rgba(0, 0, 0, 0.9)' : 'white',
+      }}>
       <View style={{flex: 1}}>
         <ImageBackground
           source={{uri: route?.params?.data?.url}}
@@ -39,15 +46,24 @@ const Details = () => {
             alignItems: 'center',
             marginTop: 30,
           }}>
-          <Text style={styles.title}>{t(route?.params?.data?.title)}</Text>
+          <Text style={[styles.title, {color: isdarkMode ? 'white' : 'black'}]}>
+            {t(route?.params?.data?.title)}
+          </Text>
           <Text style={{color: '#176FF2', fontWeight: '700'}}>
             {t('show_map')}
           </Text>
         </View>
-        <Text style={{color: '#606060', fontSize: 12, marginTop: 10}}>
+        <Text
+          style={{
+            color: isdarkMode ? 'white' : '#606060',
+            fontSize: 12,
+            marginTop: 10,
+          }}>
           {route?.params?.data?.rating}
         </Text>
-        <Text style={{color: '#3A544F', marginTop: 20}}>{t('desc')}</Text>
+        <Text style={{color: isdarkMode ? 'white' : '#3A544F', marginTop: 20}}>
+          {t('desc')}
+        </Text>
       </View>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.bookNow}>{t('book_now')}</Text>
