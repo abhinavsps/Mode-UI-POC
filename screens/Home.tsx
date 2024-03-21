@@ -2,6 +2,7 @@ import {
   Button,
   Image,
   ImageBackground,
+  Pressable,
   ScrollView,
   StyleSheet,
   Text,
@@ -15,6 +16,7 @@ import {isDarkMode} from '../utils/functions';
 import {optionList, popularList, recommendedList} from '../utils/data';
 import {useTranslation} from 'react-i18next';
 import {MyContext} from '../App';
+import {useNavigation} from '@react-navigation/native';
 
 const Home = () => {
   let isdarkMode = isDarkMode();
@@ -22,6 +24,7 @@ const Home = () => {
   const [selected, setSelected] = useState('Location');
   const {t} = useTranslation();
   const {setShowModal} = useContext(MyContext);
+  const navigation = useNavigation();
 
   return (
     <SafeAreaView
@@ -96,37 +99,42 @@ const Home = () => {
               contentContainerStyle={{paddingHorizontal: 10}}
               showsHorizontalScrollIndicator={false}>
               {popularList?.map((item, index) => (
-                <ImageBackground
+                <Pressable
                   key={index.toString()}
-                  style={{
-                    height: 240,
-                    width: 188,
-                    marginHorizontal: 10,
-                    justifyContent: 'flex-end',
-                  }}
-                  borderRadius={20}
-                  source={{uri: item.url}}>
-                  <View
-                    style={[
-                      styles.popularTitleContainer,
-                      {backgroundColor: isdarkMode ? 'white' : '#4D5652'},
-                    ]}>
-                    <Text style={{color: isdarkMode ? 'black' : 'white'}}>
-                      {t(item.title)}
-                    </Text>
-                  </View>
-                  <View
-                    style={[
-                      styles.ratingContainer,
-                      {
-                        backgroundColor: isdarkMode ? 'white' : '#4D5652',
-                      },
-                    ]}>
-                    <Text style={{color: isdarkMode ? '#4D5652' : 'white'}}>
-                      {item.rating}
-                    </Text>
-                  </View>
-                </ImageBackground>
+                  onPress={() =>
+                    navigation.navigate('Details' as never, {data: item})
+                  }>
+                  <ImageBackground
+                    style={{
+                      height: 240,
+                      width: 188,
+                      marginHorizontal: 10,
+                      justifyContent: 'flex-end',
+                    }}
+                    borderRadius={20}
+                    source={{uri: item.url}}>
+                    <View
+                      style={[
+                        styles.popularTitleContainer,
+                        {backgroundColor: isdarkMode ? 'white' : '#4D5652'},
+                      ]}>
+                      <Text style={{color: isdarkMode ? 'black' : 'white'}}>
+                        {t(item.title)}
+                      </Text>
+                    </View>
+                    <View
+                      style={[
+                        styles.ratingContainer,
+                        {
+                          backgroundColor: isdarkMode ? 'white' : '#4D5652',
+                        },
+                      ]}>
+                      <Text style={{color: isdarkMode ? '#4D5652' : 'white'}}>
+                        {item.rating}
+                      </Text>
+                    </View>
+                  </ImageBackground>
+                </Pressable>
               ))}
             </ScrollView>
           </View>

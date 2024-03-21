@@ -17,5 +17,8 @@
   "Recommended": "Recommandée",
   "Hot Deal": "Bon Deal",
   "Change_Language": "Changer de langue",
-  "placeholder": "Trouver des choses à faire"
+  "placeholder": "Trouver des choses à faire",
+  "desc": "Lorem Ipsum est tout simplement un faux texte de l’industrie de l’imprimerie et de la composition. Lorem Ipsum est le texte factice standard de l'industrie depuis les années 1500, lorsqu'un imprimeur inconnu a pris une galère de caractères et l'a brouillée pour en faire un livre de spécimens de caractères. Il a survécu non seulement à cinq siècles, mais aussi au saut vers la composition électronique, restant essentiellement inchangé.",
+  "book_now": "Reserve maintenant",
+  "show_map": "Afficher la carte"
 }

@@ -17,5 +17,8 @@
   "Recommended": "Rekommenderad",
   "Hot Deal": "Hot Deal",
   "Change_Language": "Ändra språk",
-  "placeholder": "Hitta saker att göra"
+  "placeholder": "Hitta saker att göra",
+  "desc": "Lorem Ipsum är helt enkelt dummy text från tryckeri- och sättningsindustrin. Lorem Ipsum har varit industrins standarddocka text ända sedan 1500-talet, då en okänd skrivare tog ett pentry av typ och förvrängde det för att göra en typprovbok. Den har överlevt inte bara fem århundraden, utan också språnget till elektronisk sättning, förblir i stort sett oförändrad.",
+  "book_now": "Boka nu",
+  "show_map": "Visa karta"
 }

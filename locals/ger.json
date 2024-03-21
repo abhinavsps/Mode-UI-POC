@@ -17,5 +17,8 @@
   "Recommended": "Empfohlen",
   "Hot Deal": "Gutes Geschäft",
   "Change_Language": "Sprache ändern",
-  "placeholder": "Finden Sie Dinge, die Sie tun können"
+  "placeholder": "Finden Sie Dinge, die Sie tun können",
+  "desc": "Lorem Ipsum ist lediglich ein Blindtext der Druck- und Satzindustrie. Lorem Ipsum ist seit dem 16. Jahrhundert der Standard-Dummy-Text der Branche, als ein unbekannter Drucker eine Galeere mit Schriften nahm und sie vermischte, um ein Musterbuch zu erstellen. Es hat nicht nur fünf Jahrhunderte, sondern auch den Sprung in den elektronischen Schriftsatz im Wesentlichen unverändert überstanden.",
+  "book_now": "buchen Sie jetzt",
+  "show_map": "Karte anzeigen"
 }
